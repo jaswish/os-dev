@@ -1,0 +1,14 @@
+This is the documentation for my play OS project. There isn't really any goal to this project per se, aside from it being
+a pure learning experience. One goal, of course, is to have a "working" OS, i.e. one that can handle several tasks concurrently and
+schedule them in an appropriate manner to get work done. Beyond that, I imagine it will be a matter of implementing whatever features
+and optimizations strike my fancy at the time.
+
+My choice of assembler will be the GNU Assembler, or GAS (command 'as'), which is part of the binutils package.
+	Primarily for ease of installation, but it does seem to work for x86 architectures which is a big plus
+My choice of editor, at least until it becomes too painful, will be vim. Yes, I want to make this difficult for myself.
+	This has the added benefit of being easily compatible with the WSL environment, which is what I'm using to start with for development.
+	If/When this becomes too large, I may dual boot some Linux installation on a computer and work on a graphical interface.
+	The other option would be to set up an X server on Windows, but that's a lot of effort.
+I will also be using QEMU to emulate a CPU, especially in the earlier stages of development for quick turnaround time.
+My current GCC version is 9.3.0, and I will be using this to build a cross-compiler for the i686-elf target platform.
+	arm-none-eabi as the $TARGET	
