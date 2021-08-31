@@ -2,14 +2,11 @@
 
 ; MoveCursor
 ; Move a cursor to a specific location on screen and remember it
-; Parameters: bh = Y coordinate
-;	      bl = X coordinate
+; Parameters: dh = Y coordinate
+;	      dl = X coordinate
 MoveCursor:
-	mov dh, bh          ; Cursor position line
-	mov dl, bl          ; Cursor position column
-	mov ah, 02h         ; Set cursor position function
-	mov bh, 0           ; Page number
-	int 10h             ; interrupt call
+	mov ah, 0x02        ; Set cursor position function
+	int 0x10            ; interrupt call
 	ret		    ; return
 
 ; PutChar
@@ -18,14 +15,24 @@ MoveCursor:
 ; 	      bl - text color
 ;	      cx = number of times the character is repeated
 PutChar:
-	mov ah, 2	; ah=2 - "print char" sub-function
-	int 10h	; interrupt call
+	mov ah, 0x0e	; ah=0x0e - "tele-type" function
+	int 0x10	; interrupt call
 	ret		; return
 
+; TODO: This function is not complete
 ; Print
 ; Print a string to the console
 ; Parameters: ds:si - Zero terminated string
-mov dx, ds	; the address of our string goes to dx
-mov ah, 9	; ah=9 - "print string" sub-function
-int 10h	; interrupt call
-ret		; return
+Print:
+	mov dx, ds	; the address of our string goes to dx
+	mov ah, 0x09	; ah=9 - "print string" sub-function
+	int 10h	; interrupt call
+	ret		; return
+
+; SetVideoMode
+; Set the video mode for the display
+; Parameters: al = video mode
+SetVideoMode:
+	mov ah, 0x00	; set video mode function
+	int 0x10	; interrupt call
+	ret		; return

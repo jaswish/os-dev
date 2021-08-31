@@ -1,0 +1,19 @@
+=============================
+Color Value	|	Color
+=============================
+0x00		|	Black
+0x01		|	Blue
+0x02		|	Green
+0x03		|	Cyan
+0x04		|	Red
+0x05		|	Magenta
+0x14		|	Brown
+0x07		|	White
+0x38		|	Dark Grey
+0x39		|	Light Blue
+0x3A		|	Light Green
+0x3B		|	Light Cyan
+0x3C		|	Light Red
+0x3D		|	Light Magenta
+0x3E		|	Yellow
+0x3F		|	Bright White
