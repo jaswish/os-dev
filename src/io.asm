@@ -12,21 +12,23 @@ MoveCursor:
 ; PutChar
 ; Print a character on screen at the current position
 ; Parameters: al - character to print
-; 	      bl - text color
-;	      cx = number of times the character is repeated
+; 	      bl - text color (see color_table.txt)
 PutChar:
 	mov ah, 0x0e	; ah=0x0e - "tele-type" function
 	int 0x10	; interrupt call
 	ret		; return
 
-; TODO: This function is not complete
 ; Print
 ; Print a string to the console
-; Parameters: ds:si - Zero terminated string
+; Parameters: es:bp - Zero terminated string
+;	      dh - Y coordinate to print string
+;	      dl - X coordinate to print string
+;	      cx - length of the string
+; 	      bl - text color (see color_table.txt)
 Print:
-	mov dx, ds	; the address of our string goes to dx
-	mov ah, 0x09	; ah=9 - "print string" sub-function
-	int 10h	; interrupt call
+	mov ah, 0x13	; ah=9 - "print string" sub-function
+	mov al, 0x01	; update cursor after printing	
+	int 0x10	; interrupt call
 	ret		; return
 
 ; SetVideoMode

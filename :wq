@@ -1,0 +1,10 @@
+; A sample program to play around with booting an OS
+
+mov eax, 1
+add eax, 1
+add eax, 1
+add eax, 1
+add eax, 1
+add eax, 1
+add eax, 1
+add eax, 1
