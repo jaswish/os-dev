@@ -1,3 +1,5 @@
+# This script has been deprecated in favor of a traditional Makefile structure.
+
 OS_HOME=/home/jacob/os_dev
 BUILD_DIR=$OS_HOME/build
 SRC_DIR=$OS_HOME/src
