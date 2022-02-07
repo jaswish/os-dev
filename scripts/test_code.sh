@@ -1,3 +1,5 @@
+# This script has been deprecated in place of the 'make qemu' command
+
 OS_HOME=/home/jacob/os_dev
 BUILD_DIR=$OS_HOME/build
 

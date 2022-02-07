@@ -14,7 +14,7 @@ My current GCC version is 9.3.0, and I will be using this to build a cross-compi
 ** Setting Up the Testing Environment **
 ****************************************
 Start up XLaunch with the default settings, and the -ac flags set on Windows.
-export DISPLAY="grep nameserver /etc/resolv.conf | sed 's/nameserver //':0"
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 xeyes (test program to make sure the sytsem is set up properly)
 
 ***************
@@ -27,6 +27,9 @@ The command in test_code.sh opens a TCP port on 26000 for use in debugging, and 
 (gdb) layout asm // Setting up the debugger environment
 (gdb) layout reg
 (gdb) c // Continue the program
+
+All of this can be run using the command
+gdb -ex os_gdb
 
 ***********************
 ** Important Scripts **

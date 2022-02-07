@@ -15,4 +15,4 @@ call Print              ; print the string to the screen
 welcome_msg:
         db 'Welcome to my OS'      ; define a welcome string
 
-%include "src/io.asm"
+%include "../lib/io.asm"

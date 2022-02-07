@@ -41,7 +41,7 @@ boot:
 	hlt			; halt the system
 
 ; Include other libraries
-%include "src/io.asm"
+%include "../lib/io.asm"
 	
 times 510-($-$$) db 0		; pad the rest of the 512 bytes with 0
 dw 0xaa55			; Boot Signature
